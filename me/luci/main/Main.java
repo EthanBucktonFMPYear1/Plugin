@@ -1,0 +1,127 @@
+package me.luci.main;
+
+import org.bukkit.event.Listener;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import me.luci.main.commands.Cosmetics;
+import me.luci.main.customitems.boots.TheClogsOfManicDepressive;
+import me.luci.main.customitems.boots.TheMightyBoots;
+import me.luci.main.customitems.boots.TheWellingtonsOfWaterWading;
+import me.luci.main.customitems.chestplates.TheBreastplateOfIntimidatingStature;
+import me.luci.main.customitems.chestplates.TheChestplateForMagnificentBosoms;
+import me.luci.main.customitems.chestplates.TheChestplateOfPureDefense;
+import me.luci.main.customitems.helmets.CraniumHelmet;
+import me.luci.main.customitems.helmets.TheCapOfEndlessInhalation;
+import me.luci.main.customitems.helmets.TheHelmetOfBeguilingGaze;
+import me.luci.main.customitems.leggings.TheLeggingsOfHighSplendor;
+import me.luci.main.customitems.leggings.ThePantaloonsOfHellfire;
+import me.luci.main.customitems.leggings.ThePantyhoseOfPerpetualProtection;
+import me.luci.main.effects.EffectLibTest;
+import me.luci.main.events.ArmorListener;
+import me.luci.main.events.DispenserArmorListener;
+import me.luci.main.events.PreventAnvilUse;
+import me.luci.main.guis.GUITest;
+import me.luci.main.wearing.Boots;
+import me.luci.main.wearing.Chestplates;
+import me.luci.main.wearing.Helmets;
+import me.luci.main.wearing.Leggings;
+
+public class Main extends JavaPlugin implements Listener {
+
+	public static Main instance;
+
+	@Override
+	public void onEnable() {
+		saveDefaultConfig();
+		getServer().getPluginManager().registerEvents(this, this);
+
+		// Helmets
+		getServer().getPluginManager().registerEvents(new CraniumHelmet(), this);
+		getServer().getPluginManager().registerEvents(new TheHelmetOfBeguilingGaze(), this);
+		getServer().getPluginManager().registerEvents(new TheCapOfEndlessInhalation(), this);
+
+		// Boots
+		getServer().getPluginManager().registerEvents(new TheClogsOfManicDepressive(), this);
+		getServer().getPluginManager().registerEvents(new TheWellingtonsOfWaterWading(), this);
+		getServer().getPluginManager().registerEvents(new TheMightyBoots(), this);
+
+		// Chestplates
+		getServer().getPluginManager().registerEvents(new TheBreastplateOfIntimidatingStature(), this);
+		getServer().getPluginManager().registerEvents(new TheChestplateOfPureDefense(), this);
+		getServer().getPluginManager().registerEvents(new TheChestplateForMagnificentBosoms(), this);
+
+		// Leggings
+		getServer().getPluginManager().registerEvents(new TheLeggingsOfHighSplendor(), this);
+		getServer().getPluginManager().registerEvents(new ThePantaloonsOfHellfire(), this);
+		getServer().getPluginManager().registerEvents(new ThePantyhoseOfPerpetualProtection(), this);
+
+		// Wearing effects
+		getServer().getPluginManager().registerEvents(new Helmets(), this);
+		getServer().getPluginManager().registerEvents(new Boots(), this);
+		getServer().getPluginManager().registerEvents(new Chestplates(), this);
+		getServer().getPluginManager().registerEvents(new Leggings(), this);
+		getServer().getPluginManager().registerEvents(new ArmorListener(getConfig().getStringList("blocked")), this);
+
+		// Prevents anvil usage
+		getServer().getPluginManager().registerEvents(new PreventAnvilUse(), this);
+
+		// Effects
+		getServer().getPluginManager().registerEvents(new EffectLibTest(), this);
+
+		// GUI
+		getServer().getPluginManager().registerEvents(new GUITest(this), this);
+		instance = this;
+
+		try {
+			// Better way to check for this? Only in 1.13.1+?
+			Class.forName("org.bukkit.event.block.BlockDispenseArmorEvent");
+			getServer().getPluginManager().registerEvents(new DispenserArmorListener(), this);
+		} catch (Exception ignored) {
+		}
+
+		// Helmets
+		CraniumHelmet craniumHelmet = new CraniumHelmet();
+		craniumHelmet.customRecipe();
+		TheHelmetOfBeguilingGaze THOBG = new TheHelmetOfBeguilingGaze();
+		THOBG.customRecipe();
+		TheCapOfEndlessInhalation TCOEI = new TheCapOfEndlessInhalation();
+		TCOEI.customRecipe();
+
+		// Boots
+		TheClogsOfManicDepressive TCOMD = new TheClogsOfManicDepressive();
+		TCOMD.customRecipe();
+		TheWellingtonsOfWaterWading TWOFWW = new TheWellingtonsOfWaterWading();
+		TWOFWW.customRecipe();
+		TheMightyBoots mightyBoots = new TheMightyBoots();
+		mightyBoots.customRecipe();
+
+		// Chestplates
+		TheBreastplateOfIntimidatingStature TBOIS = new TheBreastplateOfIntimidatingStature();
+		TBOIS.customRecipe();
+		TheChestplateOfPureDefense TCOPD = new TheChestplateOfPureDefense();
+		TCOPD.customRecipe();
+		TheChestplateForMagnificentBosoms TCFMB = new TheChestplateForMagnificentBosoms();
+		TCFMB.customRecipe();
+
+		// Leggings
+		TheLeggingsOfHighSplendor TLOHS = new TheLeggingsOfHighSplendor();
+		TLOHS.customRecipe();
+		ThePantaloonsOfHellfire TPOHF = new ThePantaloonsOfHellfire();
+		TPOHF.customRecipe();
+		ThePantyhoseOfPerpetualProtection TPOPP = new ThePantyhoseOfPerpetualProtection();
+		TPOPP.customRecipe();
+
+		// Register commands
+		this.getCommand("cosmetics").setExecutor(new Cosmetics());
+
+	}
+
+	public static Main getInstance() {
+		return instance;
+	}
+
+	@Override
+	public void onDisable() {
+		// Dispose of the effectmanager
+	}
+}
