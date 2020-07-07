@@ -16,7 +16,7 @@ import org.bukkit.plugin.Plugin;
 import me.luci.main.Main;
 import net.md_5.bungee.api.ChatColor;
 
-public class TheClogsOfManicDepressive implements Listener {
+public class Boots1 implements Listener {
 
 	private Plugin plugin = Main.getPlugin(Main.class);
 
@@ -24,7 +24,7 @@ public class TheClogsOfManicDepressive implements Listener {
 		ItemStack item = new ItemStack(Material.DIAMOND_BOOTS, 1);
 		ItemMeta meta = item.getItemMeta();
 
-		meta.setDisplayName(ChatColor.LIGHT_PURPLE + "The Clogs Of Manic Depressive");
+		meta.setDisplayName(ChatColor.LIGHT_PURPLE + "Boots1");
 		ArrayList<String> lore = new ArrayList<String>();
 		lore.add(ChatColor.GRAY + "Jump Boost I, Protection III");
 		meta.setLore(lore);
@@ -32,7 +32,7 @@ public class TheClogsOfManicDepressive implements Listener {
 		item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
 		item.setItemMeta(meta);
 
-		NamespacedKey key = new NamespacedKey(plugin, "Clogs");
+		NamespacedKey key = new NamespacedKey(plugin, "Boots1");
 		ShapedRecipe re = new ShapedRecipe(key, item);
 		
 		//       "###", "###", "###"
