@@ -4,18 +4,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.luci.main.commands.Cosmetics;
-import me.luci.main.customitems.boots.TheClogsOfManicDepressive;
-import me.luci.main.customitems.boots.TheMightyBoots;
-import me.luci.main.customitems.boots.TheWellingtonsOfWaterWading;
-import me.luci.main.customitems.chestplates.TheBreastplateOfIntimidatingStature;
-import me.luci.main.customitems.chestplates.TheChestplateForMagnificentBosoms;
-import me.luci.main.customitems.chestplates.TheChestplateOfPureDefense;
-import me.luci.main.customitems.helmets.CraniumHelmet;
-import me.luci.main.customitems.helmets.TheCapOfEndlessInhalation;
-import me.luci.main.customitems.helmets.TheHelmetOfBeguilingGaze;
-import me.luci.main.customitems.leggings.TheLeggingsOfHighSplendor;
-import me.luci.main.customitems.leggings.ThePantaloonsOfHellfire;
-import me.luci.main.customitems.leggings.ThePantyhoseOfPerpetualProtection;
 import me.luci.main.effects.EffectLibTest;
 import me.luci.main.events.ArmorListener;
 import me.luci.main.events.DispenserArmorListener;
@@ -34,26 +22,6 @@ public class Main extends JavaPlugin implements Listener {
 	public void onEnable() {
 		saveDefaultConfig();
 		getServer().getPluginManager().registerEvents(this, this);
-
-		// Helmets
-		getServer().getPluginManager().registerEvents(new CraniumHelmet(), this);
-		getServer().getPluginManager().registerEvents(new TheHelmetOfBeguilingGaze(), this);
-		getServer().getPluginManager().registerEvents(new TheCapOfEndlessInhalation(), this);
-
-		// Boots
-		getServer().getPluginManager().registerEvents(new TheClogsOfManicDepressive(), this);
-		getServer().getPluginManager().registerEvents(new TheWellingtonsOfWaterWading(), this);
-		getServer().getPluginManager().registerEvents(new TheMightyBoots(), this);
-
-		// Chestplates
-		getServer().getPluginManager().registerEvents(new TheBreastplateOfIntimidatingStature(), this);
-		getServer().getPluginManager().registerEvents(new TheChestplateOfPureDefense(), this);
-		getServer().getPluginManager().registerEvents(new TheChestplateForMagnificentBosoms(), this);
-
-		// Leggings
-		getServer().getPluginManager().registerEvents(new TheLeggingsOfHighSplendor(), this);
-		getServer().getPluginManager().registerEvents(new ThePantaloonsOfHellfire(), this);
-		getServer().getPluginManager().registerEvents(new ThePantyhoseOfPerpetualProtection(), this);
 
 		// Wearing effects
 		getServer().getPluginManager().registerEvents(new Helmets(), this);
