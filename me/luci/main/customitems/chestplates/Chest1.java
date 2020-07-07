@@ -16,7 +16,7 @@ import org.bukkit.plugin.Plugin;
 import me.luci.main.Main;
 import net.md_5.bungee.api.ChatColor;
 
-public class TheBreastplateOfIntimidatingStature implements Listener {
+public class chest1 implements Listener {
 
 	private Plugin plugin = Main.getPlugin(Main.class);
 
@@ -24,7 +24,7 @@ public class TheBreastplateOfIntimidatingStature implements Listener {
 		ItemStack item = new ItemStack(Material.DIAMOND_CHESTPLATE, 1);
 		ItemMeta meta = item.getItemMeta();
 
-		meta.setDisplayName(ChatColor.LIGHT_PURPLE + "The Breastplate Of Intimidating Stature");
+		meta.setDisplayName(ChatColor.LIGHT_PURPLE + "Chest1");
 		ArrayList<String> lore = new ArrayList<String>();
 		lore.add(ChatColor.GRAY + "Regeneration I, Protection III");
 		meta.setLore(lore);
@@ -32,7 +32,7 @@ public class TheBreastplateOfIntimidatingStature implements Listener {
 		item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
 		item.setItemMeta(meta);
 		
-		NamespacedKey key = new NamespacedKey(plugin, "Intimidation");
+		NamespacedKey key = new NamespacedKey(plugin, "Chest1");
 		ShapedRecipe re = new ShapedRecipe(key, item);
 		
 		re.shape("# #", "#$#", "###");
