@@ -16,7 +16,7 @@ import org.bukkit.plugin.Plugin;
 import me.luci.main.Main;
 import net.md_5.bungee.api.ChatColor;
 
-public class TheMightyBoots implements Listener {
+public class Boots2 implements Listener {
 	
 	private Plugin plugin = Main.getPlugin(Main.class);
 	
@@ -24,7 +24,7 @@ public class TheMightyBoots implements Listener {
 		ItemStack item = new ItemStack(Material.DIAMOND_BOOTS, 1);
 		ItemMeta meta = item.getItemMeta();
 		
-		meta.setDisplayName(ChatColor.GOLD + "The Mighty Boots");
+		meta.setDisplayName(ChatColor.GOLD + "Boots2");
 		ArrayList<String> lore = new ArrayList<String>();
 		
 		lore.add(ChatColor.GRAY + "Jump Boost III, Protection V, Depth Strider III");
@@ -34,7 +34,7 @@ public class TheMightyBoots implements Listener {
 		item.addUnsafeEnchantment(Enchantment.DEPTH_STRIDER, 3);
 		item.setItemMeta(meta);
 		
-		NamespacedKey key = new NamespacedKey(plugin, "Mighty");
+		NamespacedKey key = new NamespacedKey(plugin, "Boots2");
 		ShapedRecipe re = new ShapedRecipe(key, item);
 		
 		re.shape("# #", "# #", "   ");
