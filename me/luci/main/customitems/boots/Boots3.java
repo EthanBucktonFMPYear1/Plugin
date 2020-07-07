@@ -16,14 +16,14 @@ import org.bukkit.plugin.Plugin;
 import me.luci.main.Main;
 import net.md_5.bungee.api.ChatColor;
 
-public class TheWellingtonsOfWaterWading implements Listener {
+public class Boots3 implements Listener {
 	private Plugin plugin = Main.getPlugin(Main.class);
 
 	public void customRecipe() {
 		ItemStack item = new ItemStack(Material.DIAMOND_BOOTS, 1);
 		ItemMeta meta = item.getItemMeta();
 
-		meta.setDisplayName(ChatColor.AQUA + "The Wellingtons Of Water Wading");
+		meta.setDisplayName(ChatColor.AQUA + "Boots3");
 		ArrayList<String> lore = new ArrayList<String>();
 
 		lore.add(ChatColor.GRAY + "Jump Boost II, Protection IV, Depth Strider III");
@@ -33,7 +33,7 @@ public class TheWellingtonsOfWaterWading implements Listener {
 		item.addUnsafeEnchantment(Enchantment.DEPTH_STRIDER, 3);
 		item.setItemMeta(meta);
 
-		NamespacedKey key = new NamespacedKey(plugin, "Wellingtons");
+		NamespacedKey key = new NamespacedKey(plugin, "Boots3");
 		ShapedRecipe re = new ShapedRecipe(key, item);
 		
 		re.shape("# $", "$ #", "   ");
