@@ -16,7 +16,7 @@ import org.bukkit.plugin.Plugin;
 import me.luci.main.Main;
 import net.md_5.bungee.api.ChatColor;
 
-public class ThePantyhoseOfPerpetualProtection implements Listener {
+public class Legs1 implements Listener {
 	
 	private Plugin plugin = Main.getPlugin(Main.class);
 	
@@ -24,7 +24,7 @@ public class ThePantyhoseOfPerpetualProtection implements Listener {
 		ItemStack item = new ItemStack(Material.DIAMOND_LEGGINGS, 1);
 		ItemMeta meta = item.getItemMeta();
 		
-		meta.setDisplayName(ChatColor.GOLD + "The Pantyhose Of Perpetual Protection");
+		meta.setDisplayName(ChatColor.GOLD + "TLegs1");
 		ArrayList<String> lore = new ArrayList<String>();
 		
 		lore.add(ChatColor.GRAY + "Fire Resistance III, Protection V");
@@ -33,7 +33,7 @@ public class ThePantyhoseOfPerpetualProtection implements Listener {
 		item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 5);
 		item.setItemMeta(meta);
 
-		NamespacedKey key = new NamespacedKey(plugin, "Perpetual");
+		NamespacedKey key = new NamespacedKey(plugin, "Legs1");
 		ShapedRecipe re = new ShapedRecipe(key, item);
 		
 		re.shape("#$#", "# #", "# #");
