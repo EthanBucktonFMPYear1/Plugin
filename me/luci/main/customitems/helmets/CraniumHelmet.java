@@ -16,7 +16,7 @@ import org.bukkit.plugin.Plugin;
 import me.luci.main.Main;
 import net.md_5.bungee.api.ChatColor;
 
-public class CraniumHelmet implements Listener {
+public class Helmet1 implements Listener {
 
 	private Plugin plugin = Main.getPlugin(Main.class);
 
@@ -24,7 +24,7 @@ public class CraniumHelmet implements Listener {
 		ItemStack item = new ItemStack(Material.DIAMOND_HELMET, 1);
 		ItemMeta meta = item.getItemMeta();
 
-		meta.setDisplayName(ChatColor.LIGHT_PURPLE + "The protecter Of Fine Craniums");
+		meta.setDisplayName(ChatColor.LIGHT_PURPLE + "Helmet1");
 		ArrayList<String> lore = new ArrayList<String>();
 		lore.add(ChatColor.GRAY + "Respiration I, Protection III");
 		meta.setLore(lore);
@@ -32,7 +32,7 @@ public class CraniumHelmet implements Listener {
 		item.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
 		item.setItemMeta(meta);
 		
-		NamespacedKey key = new NamespacedKey(plugin, "Cranium");
+		NamespacedKey key = new NamespacedKey(plugin, "Helmet1");
 		ShapedRecipe re = new ShapedRecipe(key, item);
 		
 		re.shape("#$#", "# #", "   ");
